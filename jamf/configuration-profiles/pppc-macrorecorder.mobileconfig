@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Title:            PPPC: MacroRecorder
+  Description:      Pre-approves MacroRecorder for Accessibility, Screen Recording (user can
+                    allow it themselves) and file access, so automation macros work
+                    without admin rights.
+  Usage/Context:    Configuration profile. Upload in Jamf Pro; scope to MacroRecorder users.
+  Jamf Parameters:  None (configuration profile).
+  Requirements:     macOS 11+; MDM-delivered. Replace [INSERT_APPLE_TEAM_ID] with the vendor's
+                    Team ID: codesign -dr - /Applications/<App>.app
+  Author:           Angrod (https://github.com/Angrod)
+-->
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadDescription</key>
+			<string>MacroRecorder</string>
+			<key>PayloadDisplayName</key>
+			<string>MacroRecorder</string>
+			<key>PayloadIdentifier</key>
+			<string>71D08357-3E63-4BE8-A0DB-53AD18C70925</string>
+			<key>PayloadOrganization</key>
+			<string>[INSERT_COMPANY_NAME]</string>
+			<key>PayloadType</key>
+			<string>com.apple.TCC.configuration-profile-policy</string>
+			<key>PayloadUUID</key>
+			<string>BB245875-F7EE-4182-AD83-58AD7C60F270</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>Services</key>
+			<dict>
+				<key>Accessibility</key>
+				<array>
+					<dict>
+						<key>Authorization</key>
+						<string>Allow</string>
+						<key>CodeRequirement</key>
+						<string>identifier MacroRecorder and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "[INSERT_APPLE_TEAM_ID]"</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>MacroRecorder</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+				<key>ScreenCapture</key>
+				<array>
+					<dict>
+						<key>Authorization</key>
+						<string>AllowStandardUserToSetSystemService</string>
+						<key>CodeRequirement</key>
+						<string>identifier MacroRecorder and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "[INSERT_APPLE_TEAM_ID]"</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>MacroRecorder</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+				<key>SystemPolicyAllFiles</key>
+				<array>
+					<dict>
+						<key>Authorization</key>
+						<string>Allow</string>
+						<key>CodeRequirement</key>
+						<string>identifier MacroRecorder and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "[INSERT_APPLE_TEAM_ID]"</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>MacroRecorder</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+				<key>SystemPolicyDesktopFolder</key>
+				<array>
+					<dict>
+						<key>Authorization</key>
+						<string>Allow</string>
+						<key>CodeRequirement</key>
+						<string>identifier MacroRecorder and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "[INSERT_APPLE_TEAM_ID]"</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>MacroRecorder</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+				<key>SystemPolicyDocumentsFolder</key>
+				<array>
+					<dict>
+						<key>Authorization</key>
+						<string>Allow</string>
+						<key>CodeRequirement</key>
+						<string>identifier MacroRecorder and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "[INSERT_APPLE_TEAM_ID]"</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>MacroRecorder</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>MacroRecorder</string>
+	<key>PayloadDisplayName</key>
+	<string>MacroRecorder</string>
+	<key>PayloadIdentifier</key>
+	<string>71D08357-3E63-4BE8-A0DB-53AD18C70925</string>
+	<key>PayloadOrganization</key>
+	<string>[INSERT_COMPANY_NAME]</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>5F6E2BEA-020A-48F8-B5A7-801010E95F6A</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

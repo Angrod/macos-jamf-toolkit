@@ -1,0 +1,10 @@
+# Un-scrubbed archive and audit notes: never commit these.
+_archive_for_review/
+AUDIT_REPORT.md
+SCRUB_LOG.md
+PHASE4_CHANGES.md
+
+# macOS / local noise
+.DS_Store
+*.log
+.env

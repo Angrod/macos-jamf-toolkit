@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Title:            Restrict iCloud Services
+  Description:      Disables iCloud Drive, Desktop & Documents sync, iCloud Photos, Keychain,
+                    Bookmarks, Mail, Private Relay and Find My on company Macs to keep
+                    corporate data out of personal iCloud accounts.
+  Usage/Context:    Configuration profile. Upload in Jamf Pro > Configuration Profiles > Upload,
+                    scope to computers. Device-level (System) scope.
+  Jamf Parameters:  None (configuration profile).
+  Requirements:     macOS 12+ (Private Relay key needs macOS 12). Some restrictions require
+                    supervision / Automated Device Enrollment.
+  Author:           Angrod (https://github.com/Angrod)
+-->
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>DisableFMMiCloudSetting</key>
+			<true/>
+			<key>PayloadDisplayName</key>
+			<string>iCloud Find My</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.icloud.managed.884EF73B-F5EB-4BC1-822E-227F98D66BA3</string>
+			<key>PayloadType</key>
+			<string>com.apple.icloud.managed</string>
+			<key>PayloadUUID</key>
+			<string>CFDE6A08-C95C-40E9-9727-21C563B757A5</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>NSDocumentSaveNewDocumentsToCloud</key>
+			<false/>
+			<key>PayloadDisplayName</key>
+			<string>Global Preferences</string>
+			<key>PayloadIdentifier</key>
+			<string>.GlobalPreferences.BC4B0F48-3948-4823-83B1-E320C58F0255</string>
+			<key>PayloadType</key>
+			<string>.GlobalPreferences</string>
+			<key>PayloadUUID</key>
+			<string>2B132B64-C386-495A-BDEC-D85E6D6EBFB5</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>Restrictions</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.applicationaccess.1F1FEC86-6D25-491E-985D-72C253AADE08</string>
+			<key>PayloadType</key>
+			<string>com.apple.applicationaccess</string>
+			<key>PayloadUUID</key>
+			<string>9D396EB4-6FB2-4B89-8203-1C163B22B469</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>allowCloudBTMM</key>
+			<false/>
+			<key>allowCloudBookmarks</key>
+			<false/>
+			<key>allowCloudDesktopAndDocuments</key>
+			<false/>
+			<key>allowCloudDocumentSync</key>
+			<false/>
+			<key>allowCloudFMM</key>
+			<false/>
+			<key>allowCloudKeychainSync</key>
+			<false/>
+			<key>allowCloudMail</key>
+			<false/>
+			<key>allowCloudPhotoLibrary</key>
+			<false/>
+			<key>allowCloudPrivateRelay</key>
+			<false/>
+			<key>allowFindMyDevice</key>
+			<false/>
+			<key>allowFindMyFriends</key>
+			<false/>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Disables the following iCloud services: Drive, Desktop and Documents Sync, Photos, Keychain, Bookmarks, Private Relay, Mail, Find My</string>
+	<key>PayloadDisplayName</key>
+	<string>Restrict iCloud Services</string>
+	<key>PayloadIdentifier</key>
+	<string>17D2423A-70CA-4708-BDE4-C6C7547585D1</string>
+	<key>PayloadOrganization</key>
+	<string>[INSERT_COMPANY_NAME]</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>1055B22D-DE1D-4745-8F88-685819342578</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

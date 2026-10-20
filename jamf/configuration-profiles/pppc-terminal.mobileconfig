@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Title:            PPPC: Terminal
+  Description:      Privacy Preferences Policy Control (TCC) profile pre-approving Terminal for
+                    Accessibility, Apple Events (System Events, Finder, SystemUIServer),
+                    Photos and Full Disk Access. Intended for IT/admin Macs only.
+  Usage/Context:    Configuration profile. Upload in Jamf Pro and scope narrowly (IT team).
+  Jamf Parameters:  None (configuration profile).
+  Requirements:     macOS 11+; must be delivered by MDM (PPPC profiles can't be installed manually).
+  Author:           Angrod (https://github.com/Angrod)
+-->
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadDescription</key>
+			<string>Terminal FDA</string>
+			<key>PayloadDisplayName</key>
+			<string>Terminal FDA</string>
+			<key>PayloadIdentifier</key>
+			<string>875A405D-AA2A-438C-8947-C032605525B7</string>
+			<key>PayloadOrganization</key>
+			<string>[INSERT_COMPANY_NAME]</string>
+			<key>PayloadType</key>
+			<string>com.apple.TCC.configuration-profile-policy</string>
+			<key>PayloadUUID</key>
+			<string>80B587CC-0D65-44A3-B935-CF09FB151768</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>Services</key>
+			<dict>
+				<key>Accessibility</key>
+				<array>
+					<dict>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.apple.Terminal" and anchor apple</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>com.apple.Terminal</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+				<key>AppleEvents</key>
+				<array>
+					<dict>
+						<key>AEReceiverCodeRequirement</key>
+						<string>identifier "com.apple.systemevents" and anchor apple</string>
+						<key>AEReceiverIdentifier</key>
+						<string>com.apple.systemevents</string>
+						<key>AEReceiverIdentifierType</key>
+						<string>bundleID</string>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.apple.Terminal" and anchor apple</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>com.apple.Terminal</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+					<dict>
+						<key>AEReceiverCodeRequirement</key>
+						<string>identifier "com.apple.finder" and anchor apple</string>
+						<key>AEReceiverIdentifier</key>
+						<string>com.apple.finder</string>
+						<key>AEReceiverIdentifierType</key>
+						<string>bundleID</string>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.apple.Terminal" and anchor apple</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>com.apple.Terminal</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+					<dict>
+						<key>AEReceiverCodeRequirement</key>
+						<string>identifier "com.apple.systemuiserver" and anchor apple</string>
+						<key>AEReceiverIdentifier</key>
+						<string>com.apple.systemuiserver</string>
+						<key>AEReceiverIdentifierType</key>
+						<string>bundleID</string>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.apple.Terminal" and anchor apple</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>com.apple.Terminal</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+				<key>Photos</key>
+				<array>
+					<dict>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.apple.Terminal" and anchor apple</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>com.apple.Terminal</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+				<key>SystemPolicyAllFiles</key>
+				<array>
+					<dict>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.apple.Terminal" and anchor apple</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>com.apple.Terminal</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+				<key>SystemPolicyDesktopFolder</key>
+				<array>
+					<dict>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.apple.Terminal" and anchor apple</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>com.apple.Terminal</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+				<key>SystemPolicyDocumentsFolder</key>
+				<array>
+					<dict>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.apple.Terminal" and anchor apple</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>com.apple.Terminal</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+				<key>SystemPolicyDownloadsFolder</key>
+				<array>
+					<dict>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.apple.Terminal" and anchor apple</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>com.apple.Terminal</string>
+						<key>IdentifierType</key>
+						<string>bundleID</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Terminal FDA</string>
+	<key>PayloadDisplayName</key>
+	<string>Terminal FDA</string>
+	<key>PayloadIdentifier</key>
+	<string>875A405D-AA2A-438C-8947-C032605525B7</string>
+	<key>PayloadOrganization</key>
+	<string>[INSERT_COMPANY_NAME]</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>50747A5B-A20C-490A-B9F5-6D6A8928CA4D</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Title:            Nudge Preferences
+  Description:      Nudge settings: minimum macOS version, deadline, deferral counts, refresh
+                    cycles and branding for the open-source Nudge update reminder.
+                    Example values target macOS 12.5.1; update the version and
+                    requiredInstallationDate for each release.
+  Usage/Context:    Jamf Pro > Configuration Profiles > Application &amp; Custom Settings > Upload,
+                    preference domain: com.github.macadmins.Nudge
+  Jamf Parameters:  None (configuration profile).
+  Requirements:     Nudge (github.com/macadmins/nudge) installed with its LaunchAgent. Replace
+                    [INSERT_COMPANY_LOGO] with your logo file name.
+  Author:           Angrod (https://github.com/Angrod)
+-->
+<plist version="1.0">
+  <dict>
+    <key>optionalFeatures</key>
+    <dict>
+      <key>acceptableApplicationBundleIDs</key>
+      <array>
+        <string>us.zoom.xos</string>
+      </array>
+      <key>aggressiveUserExperience</key>
+      <true/>
+      <key>attemptToFetchMajorUpgrade</key>
+      <true/>
+      <key>enforceMinorUpdates</key>
+      <true/>
+    </dict>
+    <key>osVersionRequirements</key>
+    <array>
+      <dict>
+        <key>aboutUpdateURL</key>
+        <string>https://support.apple.com/en-us/HT213413</string>
+        <key>requiredInstallationDate</key>
+        <string>2022-08-19T00:00:00Z</string>
+        <key>requiredMinimumOSVersion</key>
+        <string>12.5.1</string>
+        <key>targetedOSVersions</key>
+        <array>
+          <string>12.0</string>
+          <string>12.0.1</string>
+          <string>12.1</string>
+          <string>12.2</string>
+          <string>12.2.1</string>
+          <string>12.3</string>
+          <string>12.3.1</string>
+          <string>12.4</string>
+          <string>12.5</string>
+        </array>
+      </dict>
+    </array>
+    <key>userExperience</key>
+    <dict>
+      <key>allowUserQuitDeferrals</key>
+      <false/>
+      <key>allowedDeferrals</key>
+      <integer>15</integer>
+      <key>approachingRefreshCycle</key>
+      <integer>14400</integer>
+      <key>approachingWindowTime</key>
+      <integer>72</integer>
+      <key>elapsedRefreshCycle</key>
+      <integer>3600</integer>
+      <key>imminentRefreshCycle</key>
+      <integer>10800</integer>
+      <key>imminentWindowTime</key>
+      <integer>24</integer>
+      <key>initialRefreshCycle</key>
+      <integer>21600</integer>
+      <key>nudgeRefreshCycle</key>
+      <integer>60</integer>
+    </dict>
+    <key>userInterface</key>
+    <dict>
+      <key>iconDarkPath</key>
+      <string>/Library/Application Support/Nudge/[INSERT_COMPANY_LOGO].png</string>
+      <key>iconLightPath</key>
+      <string>/Library/Application Support/Nudge/[INSERT_COMPANY_LOGO].png</string>
+      <key>screenShotDarkPath</key>
+      <string>/Library/Application Support/Nudge/SysprefSS_Dark.png</string>
+      <key>screenShotLightPath</key>
+      <string>/Library/Application Support/Nudge/SysprefSS_Light.png</string>
+      <key>showDeferralCount</key>
+      <true/>
+      <key>singleQuitButton</key>
+      <true/>
+      <key>updateElements</key>
+      <array>
+        <dict>
+          <key>_language</key>
+          <string>en</string>
+          <key>mainContentText</key>
+          <string>Hey there! \n\nWe noticed this Mac has available software updates. Keeping macOS up-to-date is an important part in keeping devices and data secure.\n\nPlease update this Mac by clicking the Update Device button to install the available updates. Laptops must be connected to power and left on for the duration of the update. \n\nWhen asked enter your username and password to approve the install.</string>
+          <key>mainHeader</key>
+          <string>This Mac requires a security update</string>
+          <key>subHeader</key>
+          <string>If you have any questions, please contact Helpdesk</string>
+        </dict>
+      </array>
+    </dict>
+  </dict>
+</plist>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Title:            Machine Whereabouts
+  Description:      Pop-up menu extension attribute that tracks where a Mac is in
+                    its lifecycle (in use, in storage, pending return, retired...).
+                    Pairs well with Smart Groups for asset audits and offboarding.
+  Usage/Context:    Jamf Pro Classic API object. Create it with:
+                      curl -X POST -H "Authorization: Bearer $TOKEN" \
+                        -H "Content-Type: text/xml" -d @machine-whereabouts.xml \
+                        "https://your-instance.jamfcloud.com/JSSResource/computerextensionattributes/id/0"
+                    or recreate it by hand in Settings > Computer Management >
+                    Extension Attributes (Input Type: Pop-up Menu).
+  Jamf Parameters:  None. Set <id> to 0 when creating a new object (Jamf assigns
+                    the real ID). Rename the Storage locations to your sites.
+  Requirements:     Jamf Pro 10.x / 11.x.
+  Author:           Angrod (https://github.com/Angrod)
+-->
+<computer_extension_attribute>
+  <id>[INSERT_JAMF_OBJECT_ID]</id>
+  <name>Machine Whereabouts</name>
+  <enabled>true</enabled>
+  <description/>
+  <data_type>String</data_type>
+  <input_type>
+    <type>Pop-up Menu</type>
+    <popup_choices>
+      <choice>In hand - Obsolete</choice>
+      <choice>In hand - Reuse</choice>
+      <choice>In Use</choice>
+      <choice>Pending Return</choice>
+      <choice>Removed from Org</choice>
+      <choice>Storage - [INSERT_LOCATION_1]</choice>
+      <choice>Storage - [INSERT_LOCATION_2]</choice>
+      <choice>Storage - [INSERT_LOCATION_3]</choice>
+      <choice>Unknown</choice>
+    </popup_choices>
+  </input_type>
+  <inventory_display>User and Location</inventory_display>
+</computer_extension_attribute>
